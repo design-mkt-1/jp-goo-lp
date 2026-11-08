@@ -18,6 +18,7 @@ This file is meant to be carried into the Jackpot landing template when it is ex
   44 px controls, one baseline, contrast, main content in the first screen at 390 and 320).
 - Comparisons are shot at the Figma frame width (375, 1440) plus 390 and 320.
 - Scratch output (screenshots, audits, variants) goes in `out/` (gitignored).
+- Cache-busting: every change to `css/` or `js/` bumps the `?v=` on its `<link>`/`<script>` in `index.html` (all three share one value, e.g. `?v=20261108.2`); Pages caches for 10 minutes and Chrome otherwise keeps the old file.
 
 ## Real-browser check (owner rule, 2026-11-08)
 

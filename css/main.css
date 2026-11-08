@@ -222,9 +222,10 @@ p, h1, h2 { margin: 0; }
   margin-top: 18px;
   padding: 8px;
 }
-/* Figma 128:4399, the ring around the button. */
+/* Figma 128:4399 (and 128:2475): the ring is 8px clear of the button on every side
+   (pulse 0..80 around the button at 8..72), so it fills the wrap padding exactly. */
 .cta-wrap::before {
-  content: ''; position: absolute; inset: 0 0 6px;
+  content: ''; position: absolute; inset: 0;
   border: 2px solid rgba(255, 225, 77, 0.55);
   border-radius: 40px;
   box-shadow: 0 0 10px rgba(255, 208, 0, 0.6);

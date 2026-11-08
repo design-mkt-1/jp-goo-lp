@@ -72,6 +72,9 @@ valid submit shows "Preview build: registration is not connected yet."
    and registration endpoints.
 5. On the live URL the console must show no `[platform]` warning and no CSP
    refusal; then do one real registration.
+6. Every change to `css/main.css`, `js/app.js` or `js/platform.js` bumps the `?v=` on all three
+   references in `index.html` (one shared value, e.g. `?v=20261108.2`). Without it browsers keep
+   the old file from cache (GitHub Pages sends `max-age=600`).
 
 ## Open
 
