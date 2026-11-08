@@ -43,6 +43,7 @@
 
   function landed() {
     spin.disabled = false;
+    spin.removeAttribute('aria-busy');
     spin.textContent = 'CLAIM BONUS';
     open(win);
   }
@@ -51,6 +52,8 @@
     if (spun) { open(reg); return; }
     spun = true;
     spin.disabled = true;
+    spin.setAttribute('aria-busy', 'true');
+    spin.textContent = 'SPINNING\u2026';
     if (reduced) {
       setTimeout(landed, 300);
       return;

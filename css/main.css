@@ -112,6 +112,7 @@ p, h1, h2 { margin: 0; }
   transition: background-color 0.2s;
 }
 .hbtn--login:hover .hbtn__box { background: rgba(255, 255, 255, 0.06); }
+.hbtn--login:active .hbtn__box { background: rgba(0, 0, 0, 0.25); }
 .flag { width: 20px; height: 10px; }
 .chev { width: 8px; height: 4px; opacity: 0.8; }
 
@@ -250,11 +251,21 @@ p, h1, h2 { margin: 0; }
 }
 .cta:hover { filter: brightness(1.05); }
 .cta:active { transform: scale(0.98); }
-.cta:disabled { cursor: progress; }
+.cta:disabled { cursor: progress; filter: none; transform: none; }
+/* M3: Figma 128:4327 loading state, gold with a spinner before the label. */
+.cta[aria-busy='true'] { gap: 10px; }
+.cta[aria-busy='true']::before {
+  content: ''; width: 16px; height: 16px; flex: none;
+  border: 2.5px solid currentColor; border-right-color: transparent; border-radius: 50%;
+}
+/* W1: nothing gold glows behind a popup. visibility keeps the layout still. */
+body:has(dialog[open]) .cta-wrap { visibility: hidden; }
 
 @media (prefers-reduced-motion: no-preference) {
   .cta-wrap::before { animation: pulse 1.8s ease-in-out infinite; }
+  .cta[aria-busy='true']::before { animation: turn 0.8s linear infinite; }
 }
+@keyframes turn { to { transform: rotate(360deg); } }
 @keyframes pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.45; transform: scale(1.02); }
@@ -263,7 +274,7 @@ p, h1, h2 { margin: 0; }
 /* ── timer ──────────────────────────────────────────────── */
 
 .timer {
-  margin-top: 14px;
+  margin-top: 20px;
   display: flex; align-items: center; gap: 6px;
   font-size: 12px; line-height: 1;
 }
@@ -313,7 +324,7 @@ p, h1, h2 { margin: 0; }
 }
 .pay__list { gap: 12px; }
 .pay__list li {
-  width: 160px; height: 52px;
+  width: min(160px, calc(50% - 6px)); height: 52px;
   display: grid; place-items: center;
   border-radius: var(--r-logo);
   border: 1px solid var(--line-soft);
@@ -334,7 +345,15 @@ dialog {
   max-width: calc(100vw - 32px);
   overflow: visible;
 }
-dialog::backdrop { background: rgba(1, 6, 20, 0.72); }
+dialog::backdrop { background: rgba(1, 6, 20, 0.86); }
+/* R2: the form can be taller than a small phone; the dialog scrolls, the
+   panel keeps clipping its own glow. */
+#reg { overflow-y: auto; max-height: 100dvh; overscroll-behavior: contain; }
+/* R1: under 900px the form is a full-width sheet (Figma 128:2536). */
+@media (max-width: 899.98px) {
+  #reg { max-width: 100vw; }
+  #reg .panel { width: 100vw; }
+}
 @media (prefers-reduced-motion: no-preference) {
   dialog[open] { animation: rise 0.35s var(--ease-out); }
   dialog[open]::backdrop { animation: fade 0.25s ease-out; }
@@ -368,7 +387,7 @@ dialog::backdrop { background: rgba(1, 6, 20, 0.72); }
 
 /* win */
 .win {
-  padding: 32px 20px 20px;
+  padding: 32px 19px 20px;
   display: flex; flex-direction: column; align-items: center; gap: 20px;
   text-align: center;
 }
@@ -456,7 +475,7 @@ dialog::backdrop { background: rgba(1, 6, 20, 0.72); }
   font-size: 15px; font-weight: 500;
   padding: 0 10px 0 0;
 }
-.input input::placeholder { color: #7c8aa0; opacity: 1; }
+.input input::placeholder { color: #8693a8; opacity: 1; }
 .eye {
   flex: none; width: 44px; height: 44px;
   display: grid; place-items: center;
@@ -544,13 +563,21 @@ dialog::backdrop { background: rgba(1, 6, 20, 0.72); }
   .cta-wrap { width: 336px; margin-top: calc(var(--wheel) * -0.179); }
   .cta { height: 72px; border-radius: 36px; }
   .cta-wrap::before { border-radius: 44px; inset: 0; }
-  .timer { margin-top: 22px; font-size: 14px; }
-  .timer__tile { min-width: 37px; font-size: 16px; padding: 6px 8px; }
+  .timer { margin-top: 15px; font-size: 14px; }
+  .timer__tile { min-width: 37px; font-size: 16px; padding: 5px 8px; }
   .timer__star { width: 13px; height: 13px; }
   .timer__tz { font-size: 11px; }
 
   .footer { padding: 60px 98px 48px; gap: 40px; }
   .pay { padding: 24px 20px; }
+  /* D2: Figma 128:4945, seven fixed slots 176 / 150 x5 / 108, gap 16. */
+  .partners__list { flex-wrap: nowrap; }
+  .partners__list li { width: 150px; height: 48px; display: grid; place-items: center; }
+  .partners__list li:first-child { width: 176px; }
+  .partners__list li:last-child { width: 108px; }
+  /* Figma 128:5179 / 128:5180: these two fill their slot height. */
+  .partners__list li:nth-child(6) img { width: 150px; height: 48px; }
+  .partners__list li:last-child img { width: 108px; height: 48px; }
 
   .panel { width: 460px; }
   .panel__glow { width: 414px; }
