@@ -12,3 +12,4 @@ __pycache__/
 _site/
 .DS_Store
 Thumbs.db
+dist/
