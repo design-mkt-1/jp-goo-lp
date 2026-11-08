@@ -19,6 +19,14 @@ This file is meant to be carried into the Jackpot landing template when it is ex
 - Comparisons are shot at the Figma frame width (375, 1440) plus 390 and 320.
 - Scratch output (screenshots, audits, variants) goes in `out/` (gitignored).
 
+## Real-browser check (owner rule, 2026-11-08)
+
+Code checks and Playwright shots are not enough. Every fix round, and again after every push,
+open the page in Chrome (Claude in Chrome) and walk every screen: main, spinning, win, register,
+form error. Do it at phone 320 / 375 / 390 and desktop 1366, 1440, 1536, 1920 and a wide screen.
+Look at each one, compare with Figma, and report per screen and size what was seen. Figma's
+frame width (1440) alone hid a broken hero on a 1900 px screen.
+
 ## Figma map
 
 File `2MyylxdZblfGnf05nQacUz`, section `128:1956` (AU · Wheel of Fortune).
