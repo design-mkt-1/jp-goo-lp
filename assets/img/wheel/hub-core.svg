@@ -1,0 +1,9 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="72.3871" height="72.3871" viewBox="0 0 72.3871 72.3871" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle id="Hub core" cx="36.1936" cy="36.1936" r="36.1936" fill="url(#paint0_radial_0_25)"/>
+<defs>
+<radialGradient id="paint0_radial_0_25" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(36.1936 36.1936) scale(36.1936)">
+<stop stop-color="#1B2438"/>
+<stop offset="1" stop-color="#05070C"/>
+</radialGradient>
+</defs>
+</svg>

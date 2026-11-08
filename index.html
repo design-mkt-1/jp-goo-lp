@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spin &amp; win your pokies bonus: 200% + 100 FS | Jackpot</title>
+  <meta name="description" content="Spin the Jackpot wheel and claim a 200% welcome bonus plus 100 free spins. Aussie exclusive, every spin wins.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#01081e">
+  <!-- The production API host is IT's. If it is not under jack-pot.tech or
+       jack-pot.com, add it to connect-src here (README, "Deploy"). -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.google.com https://www.gstatic.com https://www.googletagmanager.com https://mc.yandex.ru; connect-src 'self' https://*.jack-pot.tech https://*.jack-pot.com https://api.ipify.org https://www.google.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://mc.yandex.ru https://mc.yandex.com; frame-src https://www.google.com https://www.googletagmanager.com https://mc.yandex.ru; img-src 'self' data: https:; style-src 'self'; font-src 'self'; base-uri 'self'">
+  <link rel="icon" href="assets/img/ui/favicon.ico">
+  <link rel="preload" href="assets/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/img/wheel/static.webp" as="image">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header class="header">
+  <img class="header__logo" src="assets/img/ui/logo.svg" alt="Jackpot" width="105" height="52">
+  <div class="header__actions">
+    <!-- AU English is the only language: shown as Figma draws it, not a menu. -->
+    <span class="hbtn hbtn--lang" aria-label="Language: English (Australia)">
+      <span class="hbtn__box">
+        <img class="flag" src="assets/img/ui/flag-au.svg" alt="" width="22" height="11">EN<img class="chev" src="assets/img/ui/chevron.svg" alt="" width="8" height="4">
+      </span>
+    </span>
+    <a class="hbtn hbtn--login" data-link="login" href="https://jack-pot.com"><span class="hbtn__box">Log in</span></a>
+  </div>
+</header>
+
+<main>
+  <section class="hero" aria-labelledby="offer">
+    <picture class="hero__bg">
+      <source media="(min-width: 900px)" srcset="assets/img/bg-desktop.webp">
+      <img src="assets/img/bg-mobile.webp" alt="" width="750" height="1400" fetchpriority="high">
+    </picture>
+
+    <div class="headline">
+      <p class="headline__kicker">SPIN &amp; WIN YOUR POKIES BONUS</p>
+      <h1 class="headline__offer" id="offer">200% + 100 FS!</h1>
+      <p class="chip">
+        <img class="flag" src="assets/img/ui/flag-au.svg" alt="" width="18" height="9">
+        <span class="chip__muted">Aussie exclusive &nbsp;·&nbsp;</span>
+        <span class="chip__win">Every spin wins</span>
+      </p>
+    </div>
+
+    <div class="wheel" id="wheel" role="img" aria-label="Bonus wheel: 200% + 100 FS, 50% + 20 FS, 100% + 50 FS, 25% + 10 FS, 150% + 75 FS, 75% + 30 FS">
+      <img class="wheel__static" src="assets/img/wheel/static.webp" alt="" width="960" height="960">
+      <img class="wheel__disc" src="assets/img/wheel/disc.webp" alt="" width="960" height="960">
+      <img class="wheel__vignette" src="assets/img/wheel/vignette.svg" alt="">
+      <img class="wheel__hubring" src="assets/img/wheel/hub-ring.svg" alt="">
+      <img class="wheel__hubcore" src="assets/img/wheel/hub-core.svg" alt="">
+      <span class="wheel__opal">
+        <img class="wheel__opal-base" src="assets/img/wheel/opal-base.webp" alt="">
+        <img class="wheel__opal-1" src="assets/img/wheel/opal-1.svg" alt="">
+        <img class="wheel__opal-2" src="assets/img/wheel/opal-2.svg" alt="">
+        <img class="wheel__opal-3" src="assets/img/wheel/opal-3.svg" alt="">
+        <img class="wheel__opal-4" src="assets/img/wheel/opal-4.svg" alt="">
+      </span>
+      <img class="wheel__pointer" src="assets/img/wheel/pointer.svg" alt="">
+    </div>
+
+    <div class="cta-wrap">
+      <button class="cta" id="spin" type="button">SPIN THE WHEEL</button>
+    </div>
+
+    <p class="timer" aria-label="Offer ends in 23 hours 59 minutes">
+      <img class="timer__star" src="assets/img/ui/star.svg" alt="" width="13" height="13">
+      <span class="timer__label">Offer ends in</span>
+      <span class="timer__tile" aria-hidden="true"><span data-t="h">23</span></span>
+      <span class="timer__sep" aria-hidden="true">:</span>
+      <span class="timer__tile" aria-hidden="true"><span data-t="m">59</span></span>
+      <span class="timer__sep" aria-hidden="true">:</span>
+      <span class="timer__tile" aria-hidden="true"><span data-t="s">59</span></span>
+      <span class="timer__tz">AEST</span>
+    </p>
+  </section>
+</main>
+
+<footer class="footer">
+  <section class="pay" aria-labelledby="pay-title">
+    <h2 class="footer__title" id="pay-title">Secure Payment Methods</h2>
+    <ul class="pay__list">
+      <li><img src="assets/img/pay/visa-mastercard.svg" alt="Visa and Mastercard" width="110" height="32"></li>
+      <li><img src="assets/img/pay/crypto.svg" alt="Cryptocurrencies" width="89" height="32"></li>
+      <li><img src="assets/img/pay/bch.svg" alt="Bitcoin Cash" width="110" height="32"></li>
+      <li><img src="assets/img/pay/btc.svg" alt="Bitcoin" width="110" height="32"></li>
+      <li><img src="assets/img/pay/eth.svg" alt="Ethereum" width="32" height="32"></li>
+      <li><img src="assets/img/pay/usdt.svg" alt="Tether" width="110" height="32"></li>
+      <li><img src="assets/img/pay/visa-x-mastercard.svg" alt="Visa and Mastercard" width="120" height="30"></li>
+    </ul>
+  </section>
+
+  <section class="partners" aria-labelledby="partners-title">
+    <h2 class="footer__title" id="partners-title">Our Partners</h2>
+    <ul class="partners__list">
+      <li><img src="assets/img/partners/casinostest.svg" alt="Casinostest.org" width="110" height="30"></li>
+      <li><img src="assets/img/partners/gamblersbet.svg" alt="GamblersBet" width="100" height="32"></li>
+      <li><img src="assets/img/partners/casino-bonuses-now.svg" alt="Casino Bonuses Now" width="100" height="32"></li>
+      <li><img src="assets/img/partners/nodeposit.svg" alt="No Deposit" width="100" height="32"></li>
+      <li><img src="assets/img/partners/casino-bonus-club.svg" alt="Casino Bonus Club" width="100" height="32"></li>
+      <li><img src="assets/img/partners/zamsino.webp" alt="Zamsino approved casino" width="100" height="32"></li>
+      <li><img src="assets/img/partners/deutschland-casinos.webp" alt="Deutschland Casinos" width="90" height="40"></li>
+    </ul>
+  </section>
+
+  <!-- TODO legal: Figma's line names another operator (Wettzo, flashdashcasino.com).
+       Jackpot's real licence text goes here once the owner sends it. -->
+  <p class="legal">18+ only. Please gamble responsibly.</p>
+</footer>
+
+<!-- Win: Figma 128:2518 (mobile) / 128:3000 (desktop) -->
+<dialog id="win" aria-labelledby="win-title">
+  <div class="panel win">
+    <span class="panel__glow" aria-hidden="true"></span>
+    <button class="close" type="button" data-close aria-label="Close"><img src="assets/img/ui/close.svg" alt="" width="32" height="32"></button>
+    <p class="win__eyebrow" id="win-title">G'DAY, MATE! YOU WON</p>
+    <div class="reward">
+      <div class="reward__col"><span class="reward__value">200%</span><span class="reward__label">Welcome bonus</span></div>
+      <span class="plus" aria-label="plus"></span>
+      <div class="reward__col"><span class="reward__value">100 FS</span><span class="reward__label">Free spins</span></div>
+    </div>
+    <button class="btn" type="button" id="claim">CLAIM BONUS</button>
+    <p class="win__note">Register in 30 seconds and start playing pokies</p>
+  </div>
+</dialog>
+
+<!-- Register: Figma 128:3408 / 128:3684 (default) and 128:3463 / 128:3739 (error).
+     The Phone tab is not built: the platform only has registration/email. -->
+<dialog id="reg" aria-labelledby="reg-title">
+  <div class="panel reg">
+    <span class="panel__glow" aria-hidden="true"></span>
+    <button class="close" type="button" data-close aria-label="Close"><img src="assets/img/ui/close.svg" alt="" width="32" height="32"></button>
+    <div class="reg__head">
+      <p class="reg__eyebrow">YOUR WHEEL REWARD</p>
+      <div class="reward">
+        <div class="reward__col"><span class="reward__value">200%</span><span class="reward__label">Welcome bonus</span></div>
+        <span class="plus" aria-label="plus"></span>
+        <div class="reward__col"><span class="reward__value">100 FS</span><span class="reward__label">Free spins</span></div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <h2 class="reg__title" id="reg-title">Create your account</h2>
+
+    <form class="form" id="form" novalidate>
+      <div class="field" data-field="email">
+        <label class="field__label" for="email">Email address</label>
+        <div class="input">
+          <img class="ico" src="assets/img/ui/icon-mail.svg" alt="" width="20" height="20"><img class="ico ico--err" src="assets/img/ui/icon-mail-error.svg" alt="" width="20" height="20">
+          <input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" aria-describedby="email-err" required>
+        </div>
+        <p class="err" id="email-err" hidden><img src="assets/img/ui/icon-alert.svg" alt="" width="20" height="20"><span></span></p>
+      </div>
+
+      <div class="field" data-field="password">
+        <label class="field__label" for="password">Password</label>
+        <div class="input">
+          <img class="ico" src="assets/img/ui/icon-lock.svg" alt="" width="20" height="20"><img class="ico ico--err" src="assets/img/ui/icon-lock-error.svg" alt="" width="20" height="20">
+          <input id="password" name="password" type="password" autocomplete="new-password" placeholder="Min. 8 characters" aria-describedby="password-err" minlength="8" required>
+          <button class="eye" type="button" id="eye" aria-label="Show password" aria-pressed="false"><img src="assets/img/ui/icon-eye.svg" alt="" width="20" height="20"></button>
+        </div>
+        <p class="err" id="password-err" hidden><img src="assets/img/ui/icon-alert.svg" alt="" width="20" height="20"><span></span></p>
+      </div>
+
+      <div class="field" data-field="terms">
+        <label class="consent">
+          <input type="checkbox" id="terms" checked aria-describedby="terms-err">
+          <span class="consent__box" aria-hidden="true"></span>
+          <span>I am 18+ and accept the <a data-link="terms" target="_blank" rel="noopener">Terms &amp; Conditions</a> and <a data-link="privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+        </label>
+        <p class="err" id="terms-err" hidden><img src="assets/img/ui/icon-alert.svg" alt="" width="20" height="20"><span></span></p>
+      </div>
+
+      <button class="btn" type="submit">CLAIM BONUS</button>
+      <p class="form__error" id="form-err" role="alert" hidden></p>
+    </form>
+
+    <div class="reg__foot">
+      <p class="reg__login">Already have an account? <a data-link="login" href="https://jack-pot.com">Log in</a></p>
+      <p class="trust"><img src="assets/img/ui/icon-lock-small.svg" alt="" width="20" height="20">Your data is protected with 256-bit SSL encryption</p>
+      <p class="recaptcha-note">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Terms of Service</a> apply.</p>
+    </div>
+  </div>
+</dialog>
+
+<!-- Shown when IT's landing response says active: false. -->
+<dialog id="off" aria-labelledby="off-title">
+  <div class="panel off">
+    <img src="assets/img/ui/logo.svg" alt="Jackpot" width="105" height="52">
+    <h2 id="off-title">Page disabled</h2>
+    <p>The page you are looking for appears to be disabled. Do you have any questions?</p>
+    <a href="mailto:support@jack-pot.com">support@jack-pot.com</a>
+  </div>
+</dialog>
+
+<script src="js/platform.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

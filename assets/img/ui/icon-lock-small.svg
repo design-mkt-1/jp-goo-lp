@@ -1,0 +1,7 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="icon-lock">
+<rect id="Rectangle" x="4.3" y="9.8" width="11.4" height="7.4" rx="1.7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke="#64748B"/>
+<path id="Vector" d="M6 9V7C6 4.8 7.8 3 10 3C12.2 3 14 4.8 14 7V9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke="#64748B"/>
+<circle id="Ellipse" cx="10" cy="13.5" r="1" fill="#64748B"/>
+</g>
+</svg>

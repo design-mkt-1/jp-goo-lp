@@ -1,0 +1,5 @@
+{
+  "id": 0,
+  "email_registration": "https://IT-PROD-API-HOST/api/jp/registration/email",
+  "landing": "https://IT-PROD-API-HOST/api/jp/landing/0"
+}

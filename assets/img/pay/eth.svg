@@ -1,0 +1,51 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="32" height="32" fill="#1E1E1E"/>
+<g id="AU &#194;&#183; Wheel of Fortune">
+<path d="M-185.5 -1157C-185.5 -1158.1 -184.605 -1159 -183.5 -1159H7773.5V4982C7773.5 4983.1 7772.6 4984 7771.5 4984H-183.5C-184.605 4984 -185.5 4983.1 -185.5 4982V-1157Z" fill="#0A0C14"/>
+<path d="M7773.5 -1159H7774.5V-1160H7773.5V-1159ZM-183.5 -1159V-1158H7773.5V-1159V-1160H-183.5V-1159ZM7773.5 -1159H7772.5V4982H7773.5H7774.5V-1159H7773.5ZM7771.5 4984V4983H-183.5V4984V4985H7771.5V4984ZM-185.5 4982H-184.5V-1157H-185.5H-186.5V4982H-185.5ZM-183.5 4984V4983C-184.052 4983 -184.5 4982.55 -184.5 4982H-185.5H-186.5C-186.5 4983.66 -185.157 4985 -183.5 4985V4984ZM7773.5 4982H7772.5C7772.5 4982.55 7772.05 4983 7771.5 4983V4984V4985C7773.16 4985 7774.5 4983.66 7774.5 4982H7773.5ZM-183.5 -1159V-1160C-185.157 -1160 -186.5 -1158.66 -186.5 -1157H-185.5H-184.5C-184.5 -1157.55 -184.052 -1158 -183.5 -1158V-1159Z" fill="white" fill-opacity="0.1"/>
+<g id="Mob">
+<g id="footer-mobile">
+<mask id="path-3-inside-1_128_1945" fill="white">
+<path d="M-85.5 -240H289.5V388H-85.5V-240Z"/>
+</mask>
+<path d="M-85.5 -240H289.5V388H-85.5V-240Z" fill="#070F1D"/>
+<path d="M-85.5 -240V-239H289.5V-240V-241H-85.5V-240Z" fill="#282936" mask="url(#path-3-inside-1_128_1945)"/>
+<g id="mobile-payment-logos">
+<rect x="-77.5" y="-200" width="359" height="330" rx="16" fill="#0D1420"/>
+<rect x="-77" y="-199.5" width="358" height="329" rx="15.5" stroke="white" stroke-opacity="0.0627451"/>
+<g id="logos-wrap-grid">
+<g id="Img - gatewaycrypto_eth:margin">
+<rect x="-64" y="-10" width="160" height="52" rx="10" fill="#161625" fill-opacity="0.8"/>
+<rect x="-63.5" y="-9.5" width="159" height="51" rx="9.5" stroke="white" stroke-opacity="0.0823529"/>
+<g id="image" clip-path="url(#clip0_128_1945)">
+<g id="Clip path group">
+<mask id="mask0_128_1945" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+<g id="a">
+<path id="Vector" d="M32 0H0V32H32V0Z" fill="black"/>
+</g>
+</mask>
+<g mask="url(#mask0_128_1945)">
+<g id="Group">
+<path id="Vector_2" d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z" fill="#627EEA"/>
+<path id="Vector_3" d="M16.5 4V12.8706L23.9944 16.2208L16.5 4Z" fill="white" fill-opacity="0.603922"/>
+<path id="Vector_4" d="M16.4996 4L9.00195 16.2208L16.4996 12.8706V4Z" fill="white"/>
+<path id="Vector_5" d="M16.5 21.9676V27.9938L24.0008 17.6162L16.5 21.9676Z" fill="white" fill-opacity="0.603922"/>
+<path id="Vector_6" d="M16.4996 27.9938V21.9666L9.00195 17.6162L16.4996 27.9938Z" fill="white"/>
+<path id="Vector_7" d="M16.5 20.573L23.9944 16.2192L16.5 12.8706V20.573Z" fill="white" fill-opacity="0.2"/>
+<path id="Vector_8" d="M9.00195 16.2192L16.4996 20.573V12.8706L9.00195 16.2192Z" fill="white" fill-opacity="0.603922"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_128_1945">
+<rect width="32" height="32" fill="white"/>
+</clipPath>
+</defs>
+</svg>

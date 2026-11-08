@@ -1,0 +1,61 @@
+# Check on every push and pull request; build and deploy only from main.
+# The Pages source must be "GitHub Actions" in the repo settings, otherwise the
+# branch builder publishes the whole repo and skips the allowlist below.
+
+name: Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          python -m pip install playwright
+          python -m playwright install --with-deps chromium
+      # Page smoke at 390 / 320 / 1440 and the registration flow against a
+      # stub: no request reaches jack-pot.tech, ipify or Google.
+      - run: python tools/check.py
+
+  build:
+    needs: check
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # An explicit allowlist, never `cp -r .`: tools/ and dotfiles stay off the site.
+      - run: |
+          mkdir -p _site
+          cp -r index.html .nojekyll css js assets _site/
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,14 @@
+# Raw Figma exports and scratch output: assets/img holds the optimised files.
+out/
+# IT's reference landing, kept locally for comparison only.
+*.zip
+
+# This landing's platform config (landing_id from IT). Written on the server,
+# never committed: a copied id sends registrations to another landing.
+config.json
+
+__pycache__/
+*.pyc
+_site/
+.DS_Store
+Thumbs.db
