@@ -13,7 +13,7 @@
   <link rel="icon" href="assets/img/ui/favicon.ico">
   <link rel="preload" href="assets/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/img/wheel/static.webp" as="image">
-  <link rel="stylesheet" href="css/main.css?v=20261108.1">
+  <link rel="stylesheet" href="css/main.css?v=20261108.2">
 </head>
 <body>
 
@@ -114,7 +114,7 @@
 
 <!-- Win: Figma 128:2518 (mobile) / 128:3000 (desktop) -->
 <dialog id="win" aria-labelledby="win-title">
-  <div class="panel win">
+  <div class="panel win" tabindex="-1" autofocus>
     <span class="panel__glow" aria-hidden="true"></span>
     <button class="close" type="button" data-close aria-label="Close"><img src="assets/img/ui/close.svg" alt="" width="32" height="32"></button>
     <p class="win__eyebrow" id="win-title">G'DAY, MATE! YOU WON</p>
@@ -131,7 +131,7 @@
 <!-- Register: Figma 128:3408 / 128:3684 (default) and 128:3463 / 128:3739 (error).
      The Phone tab is not built: the platform only has registration/email. -->
 <dialog id="reg" aria-labelledby="reg-title">
-  <div class="panel reg">
+  <div class="panel reg" tabindex="-1" autofocus>
     <span class="panel__glow" aria-hidden="true"></span>
     <button class="close" type="button" data-close aria-label="Close"><img src="assets/img/ui/close.svg" alt="" width="32" height="32"></button>
     <div class="reg__head">
@@ -188,7 +188,7 @@
 
 <!-- Shown when IT's landing response says active: false. -->
 <dialog id="off" aria-labelledby="off-title">
-  <div class="panel off">
+  <div class="panel off" tabindex="-1" autofocus>
     <img src="assets/img/ui/logo.svg" alt="Jackpot" width="105" height="52">
     <h2 id="off-title">Page disabled</h2>
     <p>The page you are looking for appears to be disabled. Do you have any questions?</p>
@@ -196,7 +196,7 @@
   </div>
 </dialog>
 
-<script src="js/platform.js?v=20261108.1"></script>
-<script src="js/app.js?v=20261108.1"></script>
+<script src="js/platform.js?v=20261108.2"></script>
+<script src="js/app.js?v=20261108.2"></script>
 </body>
 </html>

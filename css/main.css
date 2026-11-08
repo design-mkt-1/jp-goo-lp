@@ -69,6 +69,10 @@ p, h1, h2 { margin: 0; }
 }
 
 :focus-visible { outline: 2px solid var(--sky); outline-offset: 2px; }
+/* On showModal() focus goes to the panel (tabindex="-1" autofocus in index.html),
+   not to the X, so no ring shows on open. Chrome 157 ignores autofocus on the
+   <dialog> itself. Tab from the panel still reaches X with the ring above. */
+.panel:focus-visible, .panel:focus { outline: none; }
 
 /* ── header ─────────────────────────────────────────────── */
 
