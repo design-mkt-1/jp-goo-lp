@@ -150,6 +150,7 @@ p, h1, h2 { margin: 0; }
   white-space: nowrap;
   background: linear-gradient(to bottom, #fff, #e3eaf5 55%, #9fb0c9);
   -webkit-background-clip: text; background-clip: text; color: transparent;
+  padding-bottom: 0.2em; margin-bottom: -0.2em; /* room for descenders; gradient text paints only inside the box */
   filter: drop-shadow(0 2px 0 #1b2a4a) drop-shadow(0 2px 0 #0b1530) drop-shadow(0 0 16px rgba(127, 212, 255, 0.35));
 }
 .chip {
@@ -167,6 +168,7 @@ p, h1, h2 { margin: 0; }
   font-weight: 800;
   background: linear-gradient(to right, #ffe16a, var(--green));
   -webkit-background-clip: text; background-clip: text; color: transparent;
+  padding-bottom: 0.2em; margin-bottom: -0.2em; /* room for descenders; gradient text paints only inside the box */
 }
 
 /* ── wheel ──────────────────────────────────────────────
@@ -294,6 +296,7 @@ body:has(dialog[open]) .cta-wrap { visibility: hidden; }
 .timer__tile span {
   background: linear-gradient(to bottom, #fff1a8, #ffc21a);
   -webkit-background-clip: text; background-clip: text; color: transparent;
+  padding-bottom: 0.2em; margin-bottom: -0.2em; /* room for descenders; gradient text paints only inside the box */
 }
 .timer__sep { color: rgba(255, 210, 63, 0.8); font-size: 14px; font-weight: 800; }
 .timer__tz { color: var(--green); font-size: 10px; font-weight: 700; letter-spacing: 0.08em; }
@@ -401,6 +404,7 @@ dialog::backdrop { background: rgba(1, 6, 20, 0.86); }
   font-size: 40px;
   background: linear-gradient(to bottom, #fff, #b9c6da);
   -webkit-background-clip: text; background-clip: text; color: transparent;
+  padding-bottom: 0.2em; margin-bottom: -0.2em; /* room for descenders; gradient text paints only inside the box */
   filter: drop-shadow(0 0 20px rgba(127, 212, 255, 0.3));
 }
 .reward__label { color: var(--muted); font-size: 13px; font-weight: 500; line-height: 1; }
