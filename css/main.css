@@ -666,3 +666,12 @@ dialog::backdrop { background: rgba(1, 6, 20, 0.86); }
 
   .fit-pay-a .footer__title { font-size: 16px; }
 }
+
+/* Short phones (under 600px tall): tighter vertical spacing, wheel keeps its Figma size. */
+@media (max-height: 600px) and (max-width: 899.98px) {
+  .hero { padding-top: 70px; }
+  .headline { gap: 5px; }
+  .chip { padding-top: 5px; padding-bottom: 5px; row-gap: 2px; }
+  .wheel { margin-top: -7px; }
+  .cta-wrap { margin-top: -9px; }
+}
