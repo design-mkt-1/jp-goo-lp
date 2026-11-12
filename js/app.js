@@ -44,7 +44,7 @@
   function landed() {
     spin.disabled = false;
     spin.removeAttribute('aria-busy');
-    spin.textContent = 'CLAIM BONUS';
+    spin.textContent = 'OTTIENI IL BONUS';
     open(win);
   }
 
@@ -53,7 +53,7 @@
     spun = true;
     spin.disabled = true;
     spin.setAttribute('aria-busy', 'true');
-    spin.textContent = 'SPINNING\u2026';
+    spin.textContent = 'STA GIRANDO\u2026';
     if (reduced) {
       setTimeout(landed, 300);
       return;
@@ -80,14 +80,14 @@
   var submit = form.querySelector('[type="submit"]');
 
   var MSG = {
-    required: 'This field is required',
-    email: 'Please enter a valid email address',
-    password: 'Password must be at least 8 characters',
-    terms: 'Please confirm your agreement to the terms',
-    exists: 'This email is already registered',
-    recaptcha: 'Unfortunately, we could not verify your identity. Please try registering using a different browser or device.',
-    generic: 'Something went wrong. Please try again.',
-    demo: 'Preview build: registration is not connected yet.'
+    required: 'Questo campo è obbligatorio',
+    email: 'Inserisci un indirizzo email valido',
+    password: 'La password deve contenere almeno 8 caratteri',
+    terms: 'Conferma di accettare i termini',
+    exists: 'Questa email è già registrata',
+    recaptcha: 'Purtroppo non siamo riusciti a verificare la tua identità. Prova a registrarti con un altro browser o dispositivo.',
+    generic: 'Qualcosa è andato storto. Riprova.',
+    demo: 'Versione di anteprima: la registrazione non è ancora collegata.'
   };
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;   // IT's own rule (form-validations.js)
 
@@ -135,7 +135,7 @@
     var show = password.type === 'password';
     password.type = show ? 'text' : 'password';
     eye.setAttribute('aria-pressed', String(show));
-    eye.setAttribute('aria-label', show ? 'Hide password' : 'Show password');
+    eye.setAttribute('aria-label', show ? 'Nascondi password' : 'Mostra password');
   });
 
   function setBusy(on) {

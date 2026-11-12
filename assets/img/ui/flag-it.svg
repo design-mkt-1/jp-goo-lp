@@ -1,0 +1,14 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="IT flag">
+<g clip-path="url(#clip0_it)">
+<rect width="22" height="11" fill="#FFFFFF"/>
+<rect width="7.3333" height="11" fill="#009246"/>
+<rect x="14.6667" width="7.3333" height="11" fill="#CE2B37"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_it">
+<rect width="22" height="11" rx="2" fill="white"/>
+</clipPath>
+</defs>
+</svg>

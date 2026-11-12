@@ -135,7 +135,7 @@ def main():
         page.click('#form [type=submit]')
         page.wait_for_timeout(1500)
         msg = page.text_content('#email-err span')
-        if msg != 'This email is already registered': fails.append('email-taken message %r' % msg)
+        if msg != 'Questa email è già registrata': fails.append('email-taken message %r' % msg)
         page.close()
         browser.close()
     httpd.shutdown()
