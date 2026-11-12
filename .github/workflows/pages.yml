@@ -1,4 +1,9 @@
-# Check on every push and pull request; build and deploy only from main.
+# Check on every push and pull request. Build and deploy run only from main, and
+# they always assemble BOTH pages: English from main at the site root, Italian
+# from goo-italy under /it/. The github-pages environment only accepts deploys
+# from main, so a push to goo-italy runs the check and nothing else; to publish
+# an Italian change run this workflow on main (push to main, or
+# `gh workflow run pages.yml --ref main`).
 # The Pages source must be "GitHub Actions" in the repo settings, otherwise the
 # branch builder publishes the whole repo and skips the allowlist below.
 
@@ -6,7 +11,7 @@ name: Pages
 
 on:
   push:
-    branches: [main]
+    branches: [main, goo-italy]
   pull_request:
   workflow_dispatch:
 
@@ -14,10 +19,6 @@ permissions:
   contents: read
   pages: write
   id-token: write
-
-concurrency:
-  group: pages-${{ github.ref }}
-  cancel-in-progress: false
 
 jobs:
   check:
@@ -31,19 +32,27 @@ jobs:
           python -m pip install playwright
           python -m playwright install --with-deps chromium
       # Page smoke at 390 / 320 / 1440 and the registration flow against a
-      # stub: no request reaches jack-pot.tech, ipify or Google.
+      # stub: no request reaches jack-pot.tech, ipify or Google. It checks the
+      # branch that was pushed (English text on main, Italian on goo-italy).
       - run: python tools/check.py
 
   build:
     needs: check
-    if: github.event_name != 'pull_request'
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/checkout@v4
+        with:
+          ref: goo-italy
+          path: it-src
       # An explicit allowlist, never `cp -r .`: tools/ and dotfiles stay off the site.
       - run: |
-          mkdir -p _site
+          mkdir -p _site/it
           cp -r index.html .nojekyll css js assets _site/
+          (cd it-src && cp -r index.html .nojekyll css js assets ../_site/it/)
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
@@ -51,7 +60,13 @@ jobs:
 
   deploy:
     needs: build
-    if: github.event_name != 'pull_request'
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    # One fixed group, so two deploys never run at once. It sits on this job and
+    # not on the workflow: a check-only run from goo-italy must not replace a
+    # queued deploy from main.
+    concurrency:
+      group: pages
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     environment:
       name: github-pages
