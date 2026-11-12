@@ -565,7 +565,7 @@ dialog::backdrop { background: rgba(1, 6, 20, 0.86); }
   .hbtn--login .hbtn__box { padding: 11px 18px; }
   .flag { width: 22px; height: 11px; }
 
-  .hero { min-height: max(100dvh, calc(940 * var(--u))); padding: calc(153 * var(--u)) 16px calc(40 * var(--u)); }
+  .hero { min-height: calc(940 * var(--u)); padding: calc(153 * var(--u)) 16px calc(40 * var(--u)); }
   .hero::after { display: none; }
   /* The art spans the full width at Figma's 1440 ratio (1 art px = 100vw / 1920)
      and moves up so the wheel sits where Figma puts it (art y 733 = frame y 550). */
@@ -595,6 +595,9 @@ dialog::backdrop { background: rgba(1, 6, 20, 0.86); }
   .pay { padding: 24px 20px; }
   /* D2: Figma 128:4945, seven fixed slots 176 / 150 x5 / 108, gap 16. */
   .partners__list { flex-wrap: nowrap; }
+  /* The seven slots plus gaps are 1130px; the footer content box is the viewport minus 196px.
+     Below 1326px they no longer fit on one line, so they wrap to centred rows. */
+  @media (max-width: 1325.98px) { .partners__list { flex-wrap: wrap; row-gap: 16px; } }
   .partners__list li { width: 150px; height: 48px; display: grid; place-items: center; }
   .partners__list li:first-child { width: 176px; }
   .partners__list li:last-child { width: 108px; }
