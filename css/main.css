@@ -666,3 +666,9 @@ dialog::backdrop { background: rgba(1, 6, 20, 0.86); }
 @media (max-height: 600px) and (max-width: 899.98px) {
   .hero { padding-top: 72px; }
 }
+
+/* Tall phones (700px or more): hero stays 700px, button and timer sink to its bottom so Zeus shows between wheel and button; wheel is a little bigger. */
+@media (max-width: 899.98px) and (min-height: 700px) {
+  :root { --wheel: min(calc(100vw - 16px), calc(620px - 62vw)); }
+  .hero .cta-wrap { margin-top: auto; }
+}
