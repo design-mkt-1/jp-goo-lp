@@ -145,9 +145,6 @@ p, h1, h2 { margin: 0; }
 }
 
 .headline { display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; }
-.headline__kicker {
-  font-size: 13px; font-weight: 800; letter-spacing: 0.06em; line-height: 1;
-}
 .headline__offer {
   font-size: 36px; font-weight: 900; letter-spacing: -0.02em; line-height: 1;
   white-space: nowrap;
@@ -166,7 +163,6 @@ p, h1, h2 { margin: 0; }
   font-size: 12px; line-height: 1;
 }
 .chip .flag { width: 18px; height: 9px; }
-.chip__muted { color: var(--chip-text); font-weight: 500; }
 .chip__win, .win__eyebrow {
   font-weight: 800;
   background: linear-gradient(to right, #ffe16a, var(--green));
@@ -569,7 +565,7 @@ dialog::backdrop { background: rgba(1, 6, 20, 0.86); }
   .hbtn--login .hbtn__box { padding: 11px 18px; }
   .flag { width: 22px; height: 11px; }
 
-  .hero { min-height: max(100dvh, calc(940 * var(--u))); padding: calc(117 * var(--u)) 16px calc(40 * var(--u)); }
+  .hero { min-height: max(100dvh, calc(940 * var(--u))); padding: calc(153 * var(--u)) 16px calc(40 * var(--u)); }
   .hero::after { display: none; }
   /* The art spans the full width at Figma's 1440 ratio (1 art px = 100vw / 1920)
      and moves up so the wheel sits where Figma puts it (art y 733 = frame y 550). */
@@ -581,7 +577,6 @@ dialog::backdrop { background: rgba(1, 6, 20, 0.86); }
     object-fit: cover;
   }
   .headline { gap: calc(12 * var(--u)); }
-  .headline__kicker { font-size: calc(24 * var(--u)); }
   .headline__offer { font-size: calc(80 * var(--u)); filter: drop-shadow(0 4px 0 #1b2a4a) drop-shadow(0 4px 0 #0b1530) drop-shadow(0 0 37px rgba(127, 212, 255, 0.35)); }
   .chip { gap: calc(10 * var(--u)); padding: calc(10 * var(--u)) calc(17 * var(--u)); font-size: max(12px, calc(14 * var(--u))); }
   .chip .flag { width: calc(20 * var(--u)); height: calc(10 * var(--u)); }
@@ -628,14 +623,11 @@ dialog::backdrop { background: rgba(1, 6, 20, 0.86); }
    picked by one class on <body> in index.html:
      fit-offer-a | fit-offer-b   headline  A one line, type scales to the width
                                            B two lines at Figma's 36px
-     fit-chip-a  | fit-chip-b    chip      A one line, type scales (10px at 320)
-                                           B two lines under 360px, Figma's 12px
      fit-timer-a | fit-timer-b   timer     A one row, tighter gaps under 360px
                                            B label on its own line under 360px
      fit-pay-a   | fit-pay-b     footer titles  A 16px, one line, under 360px
                                            B Figma's 18px, balanced over two lines
    Desktop (900px and up) is unchanged. */
-.chip__dot { color: var(--chip-text); font-weight: 500; }
 .headline__offer > span { white-space: nowrap; }
 .consent > span:last-child { text-wrap: pretty; }
 .footer__title { text-wrap: balance; }
@@ -644,22 +636,8 @@ dialog::backdrop { background: rgba(1, 6, 20, 0.86); }
   /* headline: 438px wide at 36px, so 12.3px of width per px of type keeps it inside the padding */
   .fit-offer-a .headline__offer { font-size: min(36px, calc((100vw - 32px) / 12.3)); }
   .fit-offer-b .headline__offer { white-space: normal; line-height: 1.04; }
-
-  /* chip: about 52px of padding, flag and gaps plus 24.6em of text */
-  .chip { max-width: calc(100vw - 32px); }
-}
-@media (max-width: 389.98px) {
-  .chip { font-size: min(12px, calc((100vw - 32px - 71px) / 23.2)); }
 }
 @media (max-width: 359.98px) {
-  .fit-chip-a .chip { padding: 6px 10px; gap: 6px; font-size: calc((100vw - 32px - 61px) / 23.2); }
-  .headline__kicker { text-wrap: balance; }
-  .fit-chip-b .chip {
-    flex-wrap: wrap; justify-content: center; text-align: center;
-    row-gap: 4px; border-radius: 16px; font-size: 12px; padding: 6px 12px;
-  }
-  .fit-chip-b .chip__dot { display: none; }
-
   .fit-timer-a .timer { gap: 4px; }
   .fit-timer-b .timer { flex-wrap: wrap; justify-content: center; row-gap: 8px; }
   .fit-timer-b .timer__label { flex-basis: calc(100% - 17px); }
@@ -667,11 +645,7 @@ dialog::backdrop { background: rgba(1, 6, 20, 0.86); }
   .fit-pay-a .footer__title { font-size: 16px; }
 }
 
-/* Short phones (under 600px tall): tighter vertical spacing, wheel keeps its Figma size. */
+/* Short phones (under 600px tall): less space above the headline so the button clears the bottom edge. */
 @media (max-height: 600px) and (max-width: 899.98px) {
-  .hero { padding-top: 65px; }
-  .headline { gap: 5px; }
-  .chip { padding-top: 5px; padding-bottom: 5px; row-gap: 2px; }
-  .wheel { margin-top: -7px; }
-  .cta-wrap { margin-top: -9px; }
+  .hero { padding-top: 72px; }
 }
