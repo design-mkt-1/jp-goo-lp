@@ -589,10 +589,10 @@ dialog::backdrop { background: rgba(1, 6, 20, 0.86); }
   .cta-wrap { width: calc(336 * var(--u)); padding: calc(8 * var(--u)); margin-top: calc(var(--wheel) * -0.179); }
   .cta { height: calc(72 * var(--u)); border-radius: calc(36 * var(--u)); font-size: calc(18 * var(--u)); }
   .cta-wrap::before { border-radius: calc(44 * var(--u)); inset: 0; }
-  .timer { margin-top: calc(15 * var(--u)); gap: calc(6 * var(--u)); font-size: max(12px, calc(14 * var(--u))); }
+  .timer { margin-top: calc(15 * var(--u)); gap: calc(8 * var(--u)); font-size: max(12px, calc(14 * var(--u))); }
   .timer__tile { min-width: calc(37 * var(--u)); padding: calc(5 * var(--u)) calc(8 * var(--u)); font-size: max(13px, calc(16 * var(--u))); }
   .timer__sep { font-size: max(13px, calc(16 * var(--u))); }
-  .timer__star { width: calc(13 * var(--u)); height: calc(13 * var(--u)); }
+  .timer__star { width: calc(13 * var(--u) * 1.744); height: calc(13 * var(--u) * 1.72); margin: calc(-4.8 * var(--u)) calc(-4.84 * var(--u)); }
   .timer__tz { font-size: max(10px, calc(11 * var(--u))); }
 
   .footer { padding: 60px 98px 48px; gap: 40px; }
@@ -639,6 +639,16 @@ dialog::backdrop { background: rgba(1, 6, 20, 0.86); }
 .consent > span:last-child { text-wrap: pretty; }
 .footer__title { text-wrap: balance; }
 
+@media (max-width: 899.98px) {
+  /* Figma 128:4397 blurs what is behind the timer; the taller fade keeps the timer over dark art */
+  .hero::after {
+    height: 146px;
+    -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+    background: linear-gradient(to top, var(--page) 0, var(--page) 20%, rgba(1, 8, 30, 0) 100%);
+  }
+  /* Figma star.svg is 20.72 x 20.46 with the glow outside an 11px layout box */
+  .timer__star { width: 20.72px; height: 20.46px; margin: -4.73px -4.86px; }
+}
 @media (max-width: 899.98px) {
   /* headline: 438px wide at 36px, so 12.3px of width per px of type keeps it inside the padding */
   .fit-offer-a .headline__offer { font-size: min(36px, calc((100vw - 32px) / 12.3)); }
