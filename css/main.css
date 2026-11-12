@@ -622,3 +622,47 @@ dialog::backdrop { background: rgba(1, 6, 20, 0.86); }
   .reg__title { font-size: 22px; }
   .reg .reward { gap: 20px; }
 }
+
+/* ── Italian text fit (phones) ──────────────────────────────
+   Italian runs longer than Figma's English. Each item has two variants,
+   picked by one class on <body> in index.html:
+     fit-offer-a | fit-offer-b   headline  A one line, type scales to the width
+                                           B two lines at Figma's 36px
+     fit-chip-a  | fit-chip-b    chip      A one line, type scales (10px at 320)
+                                           B two lines under 360px, Figma's 12px
+     fit-timer-a | fit-timer-b   timer     A one row, tighter gaps under 360px
+                                           B label on its own line under 360px
+     fit-pay-a   | fit-pay-b     footer titles  A 16px, one line, under 360px
+                                           B Figma's 18px, balanced over two lines
+   Desktop (900px and up) is unchanged. */
+.chip__dot { color: var(--chip-text); font-weight: 500; }
+.headline__offer > span { white-space: nowrap; }
+.consent > span:last-child { text-wrap: pretty; }
+.footer__title { text-wrap: balance; }
+
+@media (max-width: 899.98px) {
+  /* headline: 438px wide at 36px, so 12.3px of width per px of type keeps it inside the padding */
+  .fit-offer-a .headline__offer { font-size: min(36px, calc((100vw - 32px) / 12.3)); }
+  .fit-offer-b .headline__offer { white-space: normal; line-height: 1.04; }
+
+  /* chip: about 52px of padding, flag and gaps plus 24.6em of text */
+  .chip { max-width: calc(100vw - 32px); }
+}
+@media (max-width: 389.98px) {
+  .chip { font-size: min(12px, calc((100vw - 32px - 71px) / 23.2)); }
+}
+@media (max-width: 359.98px) {
+  .fit-chip-a .chip { padding: 6px 10px; gap: 6px; font-size: calc((100vw - 32px - 61px) / 23.2); }
+  .headline__kicker { text-wrap: balance; }
+  .fit-chip-b .chip {
+    flex-wrap: wrap; justify-content: center; text-align: center;
+    row-gap: 4px; border-radius: 16px; font-size: 12px; padding: 6px 12px;
+  }
+  .fit-chip-b .chip__dot { display: none; }
+
+  .fit-timer-a .timer { gap: 4px; }
+  .fit-timer-b .timer { flex-wrap: wrap; justify-content: center; row-gap: 8px; }
+  .fit-timer-b .timer__label { flex-basis: calc(100% - 17px); }
+
+  .fit-pay-a .footer__title { font-size: 16px; }
+}
